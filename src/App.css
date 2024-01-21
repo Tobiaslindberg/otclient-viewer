@@ -11,16 +11,35 @@ body {
   flex-wrap: wrap;
 }
 
+h2 {
+  margin-block-start: 0.3em;
+  margin-block-end: 0.3em;
+}
+
 .Players > div {
-  background-color: DodgerBlue;
+  background-color: rgb(40, 34, 34);
   color: white;
-  flex: 1 0 21%; 
+  flex: 1 0 40%; 
   margin: 10px;
-  font-size: 24px;
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 
 p {
   margin: 5px;
+}
+
+.Flex {
+  display: flex;
+}
+
+.flex-grow{
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+.center {
+  text-align: center;
 }
 
 .greenText {
@@ -31,9 +50,28 @@ p {
   color: red;
 }
 
-.Players > div > h2 {
+.yellowText {
+  color: rgb(255, 251, 0);
+}
+
+.Players > div > div > h2 {
   
   text-align: center;
+}
+
+.w3-border{border:1px solid #ccc!important}
+.w3-green{background-color:#53dc0e85!important}
+.w3-blue{background-color:#1d10e185!important}
+
+.center-absolute {
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  text-align: center;
+}
+
+.lines {
+  position:relative;
 }
 
 @keyframes App-logo-spin {

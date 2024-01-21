@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ChildComponent from "./ChildComponent.js";
+import Player from "./Player.js";
 
 class Main extends Component {
   constructor(props) {
@@ -72,9 +72,10 @@ class Main extends Component {
               ...this.state.players.filter((x) => x.name != json.name),
               {
                 name: json.name,
-                mana: json.message.mana,
+                manaPercent: json.message.manaPercent,
                 hp: json.message.hp,
                 level: json.message.level,
+                levelPercent: json.message.levelPercent,
                 exp: json.message.exp,
                 stamina: json.message.stamina,
                 voc: json.message.voc,
@@ -94,8 +95,11 @@ class Main extends Component {
                   fishing: json.message.skills.fishing,
                 },
                 xpGained: json.message.xpGained,
+                timeToLevel: json.message.timeToLevel,
                 lootBalance: json.message.lootBalance,
                 xpHour: json.message.xpHour,
+                targetBot: json.message.targetBot,
+                caveBot: json.message.caveBot,
               },
             ],
           });
@@ -112,7 +116,11 @@ class Main extends Component {
             .concat(this.state.players)
             .sort((a, b) => (a.name > b.name ? 1 : -1))
             .map((player) => (
-              <ChildComponent websocket={this.state.ws} player={player} />
+              <Player
+                key={player.name}
+                websocket={this.state.ws}
+                player={player}
+              />
             ))}
       </div>
     );
